@@ -1,0 +1,27 @@
+{
+  "name": "qa-system-integration-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hybrid QA automation project covering UI, API, database validation, Docker and CI with Playwright.",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "app:start": "tsx src/app/server.ts",
+    "infra:up": "docker compose up -d --build",
+    "infra:down": "docker compose down -v",
+    "report": "playwright show-report"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/express": "^5.0.1",
+    "@types/node": "^24.3.0",
+    "@types/pg": "^8.15.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.2"
+  }
+}

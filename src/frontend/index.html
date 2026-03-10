@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QA Storefront Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero">
+        <p class="eyebrow">Integration Lab</p>
+        <h1>QA Storefront Demo</h1>
+        <p class="intro">
+          Demo application designed to validate UI behavior, API responses and order persistence in PostgreSQL.
+        </p>
+      </section>
+
+      <section>
+        <h2>Products</h2>
+        <div id="product-list" class="product-grid"></div>
+      </section>
+
+      <section class="checkout-panel">
+        <h2>Checkout</h2>
+        <form id="checkout-form" novalidate>
+          <label>
+            Selected product
+            <input id="selected-product" name="selectedProduct" type="text" readonly />
+          </label>
+
+          <label>
+            Email
+            <input id="email" aria-label="Email" name="email" type="email" placeholder="qa@example.com" />
+          </label>
+
+          <label>
+            Quantity
+            <input id="quantity" aria-label="Quantity" name="quantity" type="number" min="1" max="5" value="1" />
+          </label>
+
+          <button type="submit">Place order</button>
+          <p data-testid="validation-message" class="message error"></p>
+          <p data-testid="confirmation" class="message success"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
