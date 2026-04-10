@@ -1,28 +1,28 @@
 # QA System Integration Lab
 
-End-to-end QA automation lab designed to look like real system validation work: UI flow, backend API verification, database persistence checks, Dockerized environment and CI.
+Laboratório de automação de QA ponta a ponta, projetado para se parecer com um trabalho real de validação de sistemas: fluxo de UI, verificação de API backend, checagens de persistência em banco de dados, ambiente com Docker e integração contínua.
 
-## What this repository demonstrates
+## O que este repositório demonstra
 
-- UI automation with Playwright
-- API validation in the same suite
-- Direct database verification after transactional flows
-- Docker Compose for reproducible local and CI execution
-- HTML reporting, trace and screenshots on failures
-- Clean separation between page objects, API clients and DB helpers
+- Automação de UI com Playwright
+- Validação de API na mesma suíte
+- Verificação direta no banco de dados após fluxos transacionais
+- Docker Compose para execução reproduzível localmente e em CI
+- Relatórios HTML, trace e screenshots em caso de falhas
+- Separação limpa entre page objects, clientes de API e helpers de banco
 
-## Business flow under test
+## Fluxo de negócio testado
 
-The sample system simulates a lightweight storefront. The suite validates:
+O sistema de exemplo simula uma pequena storefront. A suíte valida:
 
-- product listing
-- checkout request
-- success feedback in UI
-- order data returned by the API
-- order persistence in PostgreSQL
-- frontend validation for invalid email input
+- listagem de produtos
+- requisição de checkout
+- feedback de sucesso na UI
+- dados do pedido retornados pela API
+- persistência do pedido no PostgreSQL
+- validação no frontend para entrada de e-mail inválida
 
-## Architecture
+## Arquitetura
 
 ```text
 .
@@ -56,21 +56,3 @@ The sample system simulates a lightweight storefront. The suite validates:
 `-- .github
     `-- workflows
         `-- integration-tests.yml
-```
-
-## How to run
-
-```bash
-npm install
-npx playwright install chromium
-npm test
-```
-
-The test runner brings the environment up with Docker Compose and tears it down automatically.
-
-## Why this is portfolio-grade
-
-- It validates the same transaction across three layers: UI, API and database.
-- It uses an actual PostgreSQL service, not a fake stub.
-- It keeps QA code isolated from application code but close enough to model real workflows.
-- It is reproducible in CI with containerized infrastructure.
